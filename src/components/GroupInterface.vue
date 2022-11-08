@@ -5,7 +5,7 @@
 			<img src="@/assets/person_gray.svg" alt="person icon" class="h-[12px] w-[12px]" />
 		</div>
 
-		<div class="flex-col">
+		<div class="w-full flex-col">
 			<div class="flex">
 				<span class="mr-[16px] max-w-[414.73px] text-base font-bold text-primary-blue">101010-Naturalizition</span>
 				<span class="font-light text-primary-dark">Januari 1,2022 19:23</span>
