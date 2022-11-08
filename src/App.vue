@@ -41,7 +41,7 @@
 			<SearchBar />
 
 			<GroupInterface />
-			<GroupInterface />
+			<PrivateInterface />
 		</template>
 		<template v-else-if="selectedButton == 'task'"> task </template>
 	</div>
@@ -54,6 +54,7 @@
 
 	import SearchBar from '@/components/SearchBar.vue';
 	import GroupInterface from '@/components/GroupInterface.vue';
+	import PrivateInterface from '@/components/PrivateInterface.vue';
 
 	import { ref, onMounted } from 'vue';
 
