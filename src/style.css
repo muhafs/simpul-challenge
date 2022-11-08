@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	background-color: #262626;
+}
+
+.primary-button,
+.secondary-button {
+	@apply grid cursor-pointer place-items-center rounded-full;
+}
+
+.primary-button {
+	@apply h-[68px] w-[68px];
+}
+
+.secondary-button {
+	@apply h-[60px] w-[60px];
+}
+
+.fade-enter-from,
+.fade-leave-to {
+	@apply translate-y-full scale-0 opacity-0 sm:translate-y-0 sm:translate-x-full;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: all 0.15s ease-out;
+}
