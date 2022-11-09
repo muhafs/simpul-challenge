@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx,svg}'],
+	content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
 	theme: {
 		extend: {
 			colors: {
 				'custom-gray': '#333333',
 				'person-gray': '#E0E0E0',
+				'border-gray': '#BDBDBD',
 
 				'primary-blue': '#2F80ED',
 				'primary-light': '#F2F2F2',
@@ -32,5 +33,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [require('tailwind-scrollbar')({ nocompatible: true })],
 };

@@ -11,8 +11,6 @@
 </template>
 
 <script setup>
-	import { onMounted } from 'vue';
-
 	defineProps({
 		isQuick: String,
 	});
