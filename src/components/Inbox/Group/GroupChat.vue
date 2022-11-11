@@ -31,6 +31,36 @@
 				</div>
 			</div>
 
+			<div class="mx-[29px] mt-[10px]">
+				<h2 class="font-bold text-sub-chat-brown">Mary Hilda</h2>
+
+				<div class="mt-[4.66px] flex items-start justify-between">
+					<div class="max-w-[66%] rounded-[5px] bg-chat-brown p-[10px]">
+						<p class="text-sm font-light text-primary-dark">Hello Obaidullah</p>
+						<p class="mt-[12px] text-xs font-light text-primary-dark">19:32</p>
+					</div>
+
+					<div class="mx-[9.67px] my-[4.67px] flex w-1/2 max-w-[50%]">
+						<img src="@/assets/more_dots.svg" alt="more" />
+					</div>
+				</div>
+			</div>
+
+			<div class="mx-[29px] mt-[10px]">
+				<h2 class="font-bold text-sub-chat-green">Obaidullah</h2>
+
+				<div class="mt-[4.66px] flex items-start justify-between">
+					<div class="max-w-[66%] rounded-[5px] bg-chat-green p-[10px]">
+						<p class="text-sm font-light text-primary-dark">Hello</p>
+						<p class="mt-[12px] text-xs font-light text-primary-dark">19:32</p>
+					</div>
+
+					<div class="mx-[9.67px] my-[4.67px] flex w-1/2 max-w-[50%]">
+						<img src="@/assets/more_dots.svg" alt="more" />
+					</div>
+				</div>
+			</div>
+
 			<PrevMessage> </PrevMessage>
 
 			<BlockMessage v-for="(msg, index) in chat.msgList" :key="index" :msg="msg" />

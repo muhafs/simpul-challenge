@@ -4,7 +4,7 @@ import { defineStore } from 'pinia';
 export const useMenuStore = defineStore('menu', () => {
 	// Data
 	const isMenuOpen = ref(false);
-	const currentMenu = ref('inbox');
+	const currentMenu = ref('task');
 
 	// Computed
 
