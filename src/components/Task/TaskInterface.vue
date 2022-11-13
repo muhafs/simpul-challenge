@@ -1,6 +1,6 @@
 <template>
 	<div class="mb-[22px] flex justify-between">
-		<div class="relative ml-[96.23px] inline-block text-left">
+		<div class="relative ml-[96.23px] block text-left">
 			<label class="inline-flex w-full justify-center rounded-[5px] border border-primary-gray bg-white py-[10px] px-[14px] text-sm font-bold text-primary-dark">
 				<input type="checkbox" class="hidden" v-model="tasks.isDropDown" />
 
@@ -19,19 +19,20 @@
 			</div>
 		</div>
 
-		<button class="rounded-[5px] bg-primary-blue px-[14px] py-[10px] font-bold text-white hover:bg-primary-blue/80">New Task</button>
+		<button class="rounded-[5px] bg-primary-blue px-[14px] py-[10px] font-bold text-white hover:bg-primary-blue/80" @click="tasks.addTodo()">New Task</button>
 	</div>
 
 	<!-- Todo -->
 	<div class="ml-[11px] mb-[22.5px] border-b border-primary-gray last:border-none" v-for="todo in tasks.todoList" :key="todo.id">
-		<div class="flex items-center justify-between">
-			<label class="mb-[17px] flex items-center">
+		<div class="flex items-start justify-between">
+			<label class="mb-[17px] flex w-1/2 items-center">
 				<input type="checkbox" v-model="todo.isDone" class="hidden" />
 
-				<img src="@/assets/todo_unchecked.svg" alt="unchecked todo" class="inline-block" v-if="!todo.isDone" />
-				<img src="@/assets/todo_checked.svg" alt="checked todo" class="inline-block" v-else />
+				<img src="@/assets/todo_unchecked.svg" alt="unchecked todo" class="block" v-if="!todo.isDone" />
+				<img src="@/assets/todo_checked.svg" alt="checked todo" class="block" v-else />
 
-				<span :class="['ml-[22px] block  font-bold text-primary-dark', { 'text-primary-gray line-through': todo.isDone }]"> {{ todo.title }}</span>
+				<span :class="['ml-[22px] block font-bold text-primary-dark', { 'text-primary-gray line-through': todo.isDone }]"> {{ todo.title }}</span>
+				<!-- <input type="text" :class="['ml-[22px] w-full font-bold text-primary-dark', { 'text-primary-gray line-through': todo.isDone }]" v-model="todo.title" /> -->
 			</label>
 
 			<div class="flex items-center">
@@ -39,14 +40,14 @@
 				<p class="px-[10px]">{{ todo.dateline }}</p>
 
 				<div class="flex">
-					<img src="@/assets/todo_expand.svg" alt="todo expand" :class="['mx-[5px] cursor-pointer transition']" />
+					<img src="@/assets/todo_expand.svg" alt="todo expand" :class="['mx-[5px] cursor-pointer transition', { 'rotate-180': !todo.isDetailShowed }]" @click="todo.isDetailShowed = !todo.isDetailShowed" />
 
 					<img src="@/assets/more_dots.svg" alt="todo option" class="mx-[15px] cursor-pointer" />
 				</div>
 			</div>
 		</div>
 
-		<div class="hidden pl-[41.67px]">
+		<div :class="['pl-[41.67px]', { hidden: !todo.isDetailShowed }]">
 			<div class="mb-[11px] flex items-center">
 				<img src="@/assets/todo_schedule.svg" alt="todo schedule" />
 

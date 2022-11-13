@@ -7,15 +7,20 @@ export const useTaskStore = defineStore('task', () => {
 	const selectedOption = ref('My Tasks');
 
 	const todoList = ref([
-		{ id: 1, title: 'Close off Case #012920- RODRIGUES, Amiguel', description: 'hello world', isDone: false, dateline: '22/12/2023' },
-		{ id: 2, title: 'some title', description: 'hello world', isDone: false, dateline: '22/12/2023' },
-		{ id: 3, title: 'some title', description: 'hello world', isDone: false, dateline: '22/12/2023' },
-		{ id: 4, title: 'some title', description: 'hello world', isDone: false, dateline: '22/12/2023' },
+		{ title: 'Close off Case #012920- RODRIGUES, Amiguel', description: 'hello world', isDone: false, dateline: '22/12/2023', isDetailShowed: false },
+		{ title: 'some title', description: 'hello world', isDone: false, dateline: '22/12/2023', isDetailShowed: false },
+		{ title: 'some title', description: 'hello world', isDone: false, dateline: '22/12/2023', isDetailShowed: false },
+		{ title: 'some title', description: 'hello world', isDone: false, dateline: '22/12/2023', isDetailShowed: false },
 	]);
 
 	// Computed Data
 
 	// Methods
+	function addTodo() {
+		todoList.value.push({ title: '', description: '', isDone: false, dateline: '', isDetailShowed: true });
 
-	return { isDropDown, selectedOption, todoList };
+		console.log(todoList.value);
+	}
+
+	return { isDropDown, selectedOption, todoList, addTodo };
 });
